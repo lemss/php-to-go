@@ -13,3 +13,8 @@ func Uniqid(prefix string) string {
 func Exit(status int) {
 	os.Exit(status)
 }
+
+// Die 实现类似PHP的die函数
+func Die(status int) {
+	os.Exit(status)
+}
