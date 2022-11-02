@@ -33,3 +33,13 @@ func Gethostbynamel(hostname string) ([]string, error) {
 	}
 	return nil, err
 }
+
+// Gethostbyaddr 实现类似PHP的gethostbyaddr()函数
+// Get the Internet host name corresponding to a given IP address
+func Gethostbyaddr(ipAddress string) (string, error) {
+	names, err := net.LookupAddr(ipAddress)
+	if names != nil {
+		return strings.TrimRight(names[0], "."), nil
+	}
+	return "", err
+}
