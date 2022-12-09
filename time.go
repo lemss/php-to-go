@@ -13,3 +13,10 @@ func Strtotime(format, strtime string) (int64, error) {
 	}
 	return t.Unix(), nil
 }
+
+// Date 实现类似PHP的date()函数
+// Date("02/01/2006 15:04:05 PM", 1524799394)
+// Note: the behavior is inconsistent with php's date function
+func Date(format string, timestamp int64) string {
+	return time.Unix(timestamp, 0).Format(format)
+}
