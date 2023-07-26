@@ -32,3 +32,12 @@ func ArrayFill(startIndex int, num uint, value interface{}) map[int]interface{} 
 	}
 	return m
 }
+
+// ArrayFlip 实现类似PHP的array_flip()函数
+func ArrayFlip(m map[interface{}]interface{}) map[interface{}]interface{} {
+	n := make(map[interface{}]interface{})
+	for i, v := range m {
+		n[v] = i
+	}
+	return n
+}
