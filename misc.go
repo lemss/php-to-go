@@ -18,3 +18,8 @@ func Exit(status int) {
 func Die(status int) {
 	os.Exit(status)
 }
+
+// Getenv 实现类似PHP的getenv函数
+func Getenv(varname string) string {
+	return os.Getenv(varname)
+}
